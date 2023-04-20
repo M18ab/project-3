@@ -21,6 +21,7 @@ class Project3 extends LitElement {
         line-height: -8.5rem;
         text-transform: uppercase!important;
         line-height: 1.5rem;
+        letter-spacing: 5px; 
       }
 
       .weekNumber {
@@ -66,16 +67,34 @@ class Project3 extends LitElement {
       }
 
       .seeAll {
-        width: 100%;
         box-sizing: border-box;
-        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
         cursor: pointer;
+        color: #0056d2;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        font-family: "Source Sans Pro",Arial,sans-serif;
+        font-weight: 700;
+        letter-spacing: -0.1px;
+        padding: 10px;
+        position:relative; top:-8px;
+        position:relative; left:-10px;
+      }
+
+      .seeAll:hover {
+        padding: 10px;
+        background-color: #b3ccf2;
+        border-radius: 5px;
+        text-decoration: underline;
       }
   `;
 
   constructor() {
     super();
-    this.header = 'My app';
+    this.weekNum = '1';
+    this.timeToComplete = '2 hours to complete';
+    this.cardTitle = 'Misconceptions about happiness';
+    this.desc = 'In this module, you will learn what it means to be happy and why pursuing happiness is not a pointless endeavor. Dr. Santos addresses how our minds lie to us and how the science shows that our misconceptions about money, grades, and social media are holding us back from implementing the techniques studied in positive psychology.';
+    this.courses = '9 videos (Total 55 min), 3 readings, 1 quiz';
   }
 
   render() {
@@ -83,14 +102,14 @@ class Project3 extends LitElement {
       <div class="wrapper">
         <div class="week"> 
           <p>WEEK</p> 
-          <p class="weekNumber">1</p>
+          <p class="weekNumber">${this.weekNum}</p>
         </div>
         <div class="Description">
-          <p class="time">2 hours to complete</p>
-          <p class="title">Misconceptions about happiness</p>
-          <p class="desc">In this module, you will learn what it means to be happy and why pursuing happiness is not a pointless endeavor. Dr. Santos addresses how our minds lie to us and how the science shows that our misconceptions about money, grades, and social media are holding us back from implementing the techniques studied in positive psychology.</p>
+          <p class="time">${this.timeToComplete}</p>
+          <p class="title">${this.cardTitle}</p>
+          <p class="desc">${this.desc}</p>
           <div class="bruh">
-            <p class="courses">9 videos (Total 55 min), 3 readings, 1 quiz</p>
+            <p class="courses">${this.courses}</p>
             <p class="seeAll">See All</p>
           </div>
         </div>
