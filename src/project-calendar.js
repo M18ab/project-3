@@ -7,7 +7,7 @@ export class ProjectCalendar extends LitElement {
     }
     static get properties() {
         return {
-            weeks: { type: Array },
+            weeks: { type: Array }
             // school: { type: String }
         }
     }
@@ -44,7 +44,7 @@ export class ProjectCalendar extends LitElement {
     render() {
         return html`
         <!-- <h2>${this.school}</h2> -->
-        <div class="wrapper2">
+        <div class="wrapper">
             ${this.weeks.map(week => html`
             <div class="item">
                 <project-3 weekNum="${week.weekNum}" timeToComplete="${week.timeToComplete}" cardTitle="${week.cardTitle}" desc="${week.desc}" courses="${week.courses}"></project-3>

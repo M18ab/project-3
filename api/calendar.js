@@ -4,37 +4,23 @@ export default async function handler(request, res) {
         {
             "weekNum": "1",
             "timeToComplete": "2 hours to complete",
-            "cardTitle": "Misconceptions about happiness",
-            "desc": "In this module, you will learn what it means to be happy and why pursuing happiness is not a pointless endeavor. Dr. Santos addresses how our minds lie to us and how the science shows that our misconceptions about money, grades, and social media are holding us back from implementing the techniques studied in positive psychology.",
-            "courses": "9 videos (Total 55 min), 3 readings, 1 quiz"
+            "cardTitle": "Introduction",
+            "desc": "Why take this course?",
+            "courses": "4 videos (Total 13 min), 11 readings"
         },
         {
-            "weekNum": "1",
+            "weekNum": "2",
             "timeToComplete": "2 hours to complete",
             "cardTitle": "Misconceptions about happiness",
-            "desc": "In this module, you will learn what it means to be happy and why pursuing happiness is not a pointless endeavor. Dr. Santos addresses how our minds lie to us and how the science shows that our misconceptions about money, grades, and social media are holding us back from implementing the techniques studied in positive psychology.",
-            "courses": "9 videos (Total 55 min), 3 readings, 1 quiz"
+            "desc": "What do we think will make us happy?",
+            "courses": "7 videos (Total 63 min), 3 readings, 1 quiz"
         },
         {
-            "weekNum": "1",
+            "weekNum": "3",
             "timeToComplete": "2 hours to complete",
-            "cardTitle": "Misconceptions about happiness",
-            "desc": "In this module, you will learn what it means to be happy and why pursuing happiness is not a pointless endeavor. Dr. Santos addresses how our minds lie to us and how the science shows that our misconceptions about money, grades, and social media are holding us back from implementing the techniques studied in positive psychology.",
-            "courses": "9 videos (Total 55 min), 3 readings, 1 quiz"
-        },
-        {
-            "weekNum": "1",
-            "timeToComplete": "2 hours to complete",
-            "cardTitle": "Misconceptions about happiness",
-            "desc": "In this module, you will learn what it means to be happy and why pursuing happiness is not a pointless endeavor. Dr. Santos addresses how our minds lie to us and how the science shows that our misconceptions about money, grades, and social media are holding us back from implementing the techniques studied in positive psychology.",
-            "courses": "9 videos (Total 55 min), 3 readings, 1 quiz"
-        },
-        {
-            "weekNum": "1",
-            "timeToComplete": "2 hours to complete",
-            "cardTitle": "Misconceptions about happiness",
-            "desc": "In this module, you will learn what it means to be happy and why pursuing happiness is not a pointless endeavor. Dr. Santos addresses how our minds lie to us and how the science shows that our misconceptions about money, grades, and social media are holding us back from implementing the techniques studied in positive psychology.",
-            "courses": "9 videos (Total 55 min), 3 readings, 1 quiz"
+            "cardTitle": "Why Our Expectations are so bad",
+            "desc": "Why do we mispredict what makes us happy?",
+            "courses": "8 videos (Total 64 min), 3 readings, 1 quiz"
         }
     ];
     res.setHeader('Cache-Control', 'max-age=0, s-maxage=1800');

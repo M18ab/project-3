@@ -1,10 +1,13 @@
 import { LitElement, html, css } from 'lit';
 
-const logo = new URL('../assets/open-wc-logo.svg', import.meta.url).href;
-
 class Project3 extends LitElement {
   static properties = {
     header: { type: String },
+    weekNum: { type: String },
+    timeToComplete: { type: String },
+    cardTitle: { type: String },
+    desc: { type: String },
+    courses: { type: String },
   }
 
   static styles = css` 
@@ -91,7 +94,7 @@ class Project3 extends LitElement {
   constructor() {
     super();
     this.weekNum = '1';
-    this.timeToComplete = '2 hours to complete';
+    this.timeToComplete = '2';
     this.cardTitle = 'Misconceptions about happiness';
     this.desc = 'In this module, you will learn what it means to be happy and why pursuing happiness is not a pointless endeavor. Dr. Santos addresses how our minds lie to us and how the science shows that our misconceptions about money, grades, and social media are holding us back from implementing the techniques studied in positive psychology.';
     this.courses = '9 videos (Total 55 min), 3 readings, 1 quiz';
@@ -105,15 +108,17 @@ class Project3 extends LitElement {
           <p class="weekNumber">${this.weekNum}</p>
         </div>
         <div class="Description">
-          <p class="time">${this.timeToComplete}</p>
+          <p class="time">${this.timeToComplete} hours to complete</p>
           <p class="title">${this.cardTitle}</p>
           <p class="desc">${this.desc}</p>
           <div class="bruh">
             <p class="courses">${this.courses}</p>
             <p class="seeAll">See All</p>
           </div>
+          <hr>
         </div>
       </div>
+      
     `;
   }
 }
