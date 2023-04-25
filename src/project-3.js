@@ -89,6 +89,22 @@ class Project3 extends LitElement {
         border-radius: 5px;
         text-decoration: underline;
       }
+
+      @media only screen and (max-width: 400px) {
+        .wrapper {
+          text-transform: var;
+          width: var;
+          font-size: 4vw;
+        }
+      }
+
+      @media only screen and (min-width: 401px) and (max-width: 800px) {
+        /* CSS styles here */
+      }
+
+      @media only screen and (min-width: 801px) {
+        /* CSS styles here */
+      }
   `;
 
   constructor() {

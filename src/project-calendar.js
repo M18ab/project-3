@@ -1,15 +1,22 @@
 import { LitElement, html, css } from 'lit';
 import "./project-3.js";
+import { IntersectionObserverMixin } from "@lrnwebcomponents/intersection-element/lib/IntersectionObserverMixin.js";
 
-export class ProjectCalendar extends LitElement {
-    static get tag() {
-        return 'project-calendar';
-    }
+export class ProjectCalendar extends IntersectionObserverMixin(LitElement) {
     static get properties() {
+        let props = {};
+        if (super.properties) {
+            props = super.properties;
+        }
         return {
-            weeks: { type: Array }
+            ...props,
+            weeks: { type: Array },
             // school: { type: String }
         }
+    }
+    
+    static get tag() {
+        return 'project-calendar';
     }
 
     constructor() {
@@ -43,6 +50,7 @@ export class ProjectCalendar extends LitElement {
 
     render() {
         return html`
+        ${this.elementVisible ? html`
         <!-- <h2>${this.school}</h2> -->
         <div class="wrapper">
             ${this.weeks.map(week => html`
@@ -51,7 +59,8 @@ export class ProjectCalendar extends LitElement {
             </div>
             `)}
         </div>
-        `;
+        `:``}
+        `
     }
 }
 customElements.define(ProjectCalendar.tag, ProjectCalendar);
