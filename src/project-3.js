@@ -1,4 +1,6 @@
 import { LitElement, html, css } from 'lit';
+import "@lrnwebcomponents/simple-icon/simple-icon.js";
+import "@lrnwebcomponents/simple-icon/lib/simple-icons.js";
 
 class Project3 extends LitElement {
   static properties = {
@@ -39,6 +41,7 @@ class Project3 extends LitElement {
         font-size: 1rem;
         line-height: -8.5rem;
         color: #1f1f1f;
+        //text-indent: 25px;
       }
       
       .title {
@@ -60,6 +63,7 @@ class Project3 extends LitElement {
         line-height: 1.5rem;
         font-weight: normal;
         color: #373a3c;
+        //text-indent: 25px;
       }      
 
       .bruh {
@@ -124,11 +128,11 @@ class Project3 extends LitElement {
           <p class="weekNumber">${this.weekNum}</p>
         </div>
         <div class="Description">
-          <p class="time">${this.timeToComplete} hours to complete</p>
+          <p class="time"><simple-icon icon="watch-later"></simple-icon>&nbsp&nbsp&nbsp${this.timeToComplete} hours to complete</p>
           <p class="title">${this.cardTitle}</p>
           <p class="desc">${this.desc}</p>
           <div class="bruh">
-            <p class="courses">${this.courses}</p>
+            <p class="courses"><simple-icon icon="communication:import-contacts"></simple-icon>&nbsp&nbsp&nbsp&nbsp${this.courses}</p>
             <p class="seeAll">See All</p>
           </div>
           <hr>
