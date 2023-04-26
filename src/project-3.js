@@ -10,9 +10,14 @@ class Project3 extends LitElement {
     cardTitle: { type: String },
     desc: { type: String },
     courses: { type: String },
+    expanded: {type: Boolean, reflect: true, attribute: 'expanded-if'},
   }
 
   static styles = css` 
+      :host([expanded-if]) .wrapper {
+        ;
+      }
+
       .wrapper {
         display: flex;
         flex-direction: row;
@@ -41,7 +46,6 @@ class Project3 extends LitElement {
         font-size: 1rem;
         line-height: -8.5rem;
         color: #1f1f1f;
-        //text-indent: 25px;
       }
       
       .title {
@@ -63,7 +67,6 @@ class Project3 extends LitElement {
         line-height: 1.5rem;
         font-weight: normal;
         color: #373a3c;
-        //text-indent: 25px;
       }      
 
       .bruh {
@@ -118,6 +121,7 @@ class Project3 extends LitElement {
     this.cardTitle = 'Misconceptions about happiness';
     this.desc = 'In this module, you will learn what it means to be happy and why pursuing happiness is not a pointless endeavor. Dr. Santos addresses how our minds lie to us and how the science shows that our misconceptions about money, grades, and social media are holding us back from implementing the techniques studied in positive psychology.';
     this.courses = '9 videos (Total 55 min), 3 readings, 1 quiz';
+    this.expanded = false;
   }
 
   render() {
