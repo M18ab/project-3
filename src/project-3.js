@@ -1,6 +1,7 @@
 import { LitElement, html, css } from 'lit';
 import "@lrnwebcomponents/simple-icon/simple-icon.js";
 import "@lrnwebcomponents/simple-icon/lib/simple-icons.js";
+import "@lrnwebcomponents/a11y-collapse/a11y-collapse.js";
 
 class Project3 extends LitElement {
   static properties = {
@@ -124,6 +125,15 @@ class Project3 extends LitElement {
     this.expanded = false;
   }
 
+  __collapseStatusChange() {
+    const status = this.shadowRoot.querySelector("a11y-collapse");
+    if (status.hasAttribute("expanded")) {
+      this.expanded = "See less";
+    } else {
+      this.expanded = "See all";
+    }
+  }
+
   render() {
     return html`
       <div class="wrapper">
@@ -137,7 +147,16 @@ class Project3 extends LitElement {
           <p class="desc">${this.desc}</p>
           <div class="bruh">
             <p class="courses"><simple-icon icon="communication:import-contacts"></simple-icon>&nbsp&nbsp&nbsp&nbsp${this.courses}</p>
-            <p class="seeAll">See All</p>
+              <a11y-collapse
+              heading-button
+              @expand="${this.__collapseStatusChange}"
+              @collapse="${this.__collapseStatusChange}"
+            >
+              <div slot="heading">
+              <a class="See All">${this.expanded}</a>
+              </div>
+              <slot name="objectiveAccordian"></slot>
+            </a11y-collapse>
           </div>
           <hr>
         </div>
