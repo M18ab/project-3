@@ -113,6 +113,15 @@ class Project3 extends LitElement {
       @media only screen and (min-width: 801px) {
         /* CSS styles here */
       }
+
+      a11y-collapse {
+        --a11y-collapse-border: none;
+        --a11y-collapse-padding-left: 0px;
+      }
+
+      a {
+        text-decoration: none;
+      }
   `;
 
   constructor() {
