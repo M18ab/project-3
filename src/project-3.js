@@ -78,6 +78,7 @@ class Project3 extends LitElement {
       }
 
       .seeAll {
+        padding: 10px;
         box-sizing: border-box;
         cursor: pointer;
         color: #0056d2;
@@ -86,15 +87,14 @@ class Project3 extends LitElement {
         font-family: "Source Sans Pro",Arial,sans-serif;
         font-weight: 700;
         letter-spacing: -0.1px;
-        padding: 10px;
-        position:relative; top:-8px;
-        position:relative; left:-10px;
+        /* position:relative; top:-8px;
+        position:relative; left:-10px; */
       }
 
       .seeAll:hover {
         padding: 10px;
         background-color: #b3ccf2;
-        border-radius: 5px;
+        border-radius: 10px;
         text-decoration: underline;
       }
 
@@ -131,7 +131,7 @@ class Project3 extends LitElement {
     this.cardTitle = 'Misconceptions about happiness';
     this.desc = 'In this module, you will learn what it means to be happy and why pursuing happiness is not a pointless endeavor. Dr. Santos addresses how our minds lie to us and how the science shows that our misconceptions about money, grades, and social media are holding us back from implementing the techniques studied in positive psychology.';
     this.courses = '9 videos (Total 55 min), 3 readings, 1 quiz';
-    this.expanded = false;
+    this.expanded = 'See All';
   }
 
   __collapseStatusChange() {
@@ -151,18 +151,18 @@ class Project3 extends LitElement {
           <p class="weekNumber">${this.weekNum}</p>
         </div>
         <div class="Description">
-          <p class="time"><simple-icon icon="watch-later"></simple-icon>&nbsp&nbsp&nbsp${this.timeToComplete} hours to complete</p>
+          <p class="time"><simple-icon icon="watch-later"></simple-icon>&nbsp&nbsp&nbsp ${this.timeToComplete} hours to complete</p>
           <p class="title">${this.cardTitle}</p>
           <p class="desc">${this.desc}</p>
           <div class="bruh">
-            <p class="courses"><simple-icon icon="communication:import-contacts"></simple-icon>&nbsp&nbsp&nbsp&nbsp${this.courses}</p>
+            <p class="courses"><simple-icon icon="communication:import-contacts"></simple-icon>&nbsp</p>
               <a11y-collapse
               heading-button
               @expand="${this.__collapseStatusChange}"
               @collapse="${this.__collapseStatusChange}"
             >
               <div slot="heading">
-              <a class="See All">${this.expanded}</a>
+              <a class="See All"><span class="courses">${this.courses}&nbsp&nbsp <span class="seeAll">${this.expanded}</span></a>
               </div>
               <slot name="objectiveAccordian"></slot>
             </a11y-collapse>
