@@ -55,7 +55,7 @@ export class ProjectCalendar extends IntersectionObserverMixin(LitElement) {
         <div class="wrapper">
             ${this.weeks.map(week => html`
             <div class="item">
-                <project-3 weekNum="${week.weekNum}" timeToComplete="${week.timeToComplete}" cardTitle="${week.cardTitle}" desc="${week.desc}" courses="${week.courses}" expanded="${week.expanded}"></project-3>
+                <project-3 weekNum="${week.weekNum}" timeToComplete="${week.timeToComplete}" cardTitle="${week.cardTitle}" desc="${week.desc}" videoCount="${week.videoCount}" videoTime="${week.videoTime}" readingCount="${week.readingCount}" quizCount="${week.quizCount}" expanded="${week.expanded}" .videos="${week.videos}" .readings="${week.readings}" .quizzes="${week.quizzes}"></project-3>
             </div>
             `)}
         </div>

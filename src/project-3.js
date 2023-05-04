@@ -10,15 +10,14 @@ class Project3 extends LitElement {
     timeToComplete: { type: String },
     cardTitle: { type: String },
     desc: { type: String },
-    courses: { type: String },
-    expanded: {type: Boolean, reflect: true, attribute: 'expanded-if'},
+    videoCount: { type: String },
+    videoTime: { type: String },
+    readingCount: { type: String },
+    quizCount: { type: String },
+    expanded: {type: String},
   }
 
   static styles = css` 
-      :host([expanded-if]) .wrapper {
-        ;
-      }
-
       .wrapper {
         display: flex;
         flex-direction: row;
@@ -130,8 +129,11 @@ class Project3 extends LitElement {
     this.timeToComplete = '2';
     this.cardTitle = 'Misconceptions about happiness';
     this.desc = 'In this module, you will learn what it means to be happy and why pursuing happiness is not a pointless endeavor. Dr. Santos addresses how our minds lie to us and how the science shows that our misconceptions about money, grades, and social media are holding us back from implementing the techniques studied in positive psychology.';
-    this.courses = '9 videos (Total 55 min), 3 readings, 1 quiz';
     this.expanded = 'See All';
+    this.videoCount = '9'
+    this.videoTime = '55'
+    this.readingCount = '3'
+    this.quizCount = '1'
   }
 
   __collapseStatusChange() {
@@ -151,7 +153,7 @@ class Project3 extends LitElement {
           <p class="weekNumber">${this.weekNum}</p>
         </div>
         <div class="Description">
-          <p class="time"><simple-icon icon="watch-later"></simple-icon>&nbsp&nbsp&nbsp ${this.timeToComplete} hours to complete</p>
+          <p class="time"><simple-icon icon="watch-later"></simple-icon>&nbsp&nbsp&nbsp ${this.timeToComplete}</p>
           <p class="title">${this.cardTitle}</p>
           <p class="desc">${this.desc}</p>
           <div class="bruh">
@@ -162,9 +164,36 @@ class Project3 extends LitElement {
               @collapse="${this.__collapseStatusChange}"
             >
               <div slot="heading">
-              <a class="See All"><span class="courses">${this.courses}&nbsp&nbsp <span class="seeAll">${this.expanded}</span></a>
+              <a class="See All"><span class="courses">${this.videoCount} videos (Total ${this.videoTime} min), ${this.readingCount} readings, ${this.quizCount} quiz(zes)&nbsp&nbsp <span class="seeAll">${this.expanded}</span></a>
               </div>
-              <slot name="objectiveAccordian"></slot>
+                <slot name="collapse"></slot>
+                <div class="courses">
+                  <ul>
+                    <p><simple-icon icon="av:play-circle-filled"></simple-icon>&nbsp&nbsp&nbsp ${this.videoCount} videos (Total ${this.videoTime} min)</p>
+                    ${this.videos.map(activity => html`
+                    <li>${activity.text}</li>
+                    `)}
+                  </ul>
+                </div>
+                <hr>
+                <div class="courses">
+                  <ul>
+                    <p><simple-icon icon="maps:local-library"></simple-icon>&nbsp&nbsp&nbsp ${this.readingCount} readings</p>
+                    ${this.readings.map(activity => html`
+                    <li>${activity.text}</li>
+                    `)}
+                  </ul>
+                </div>
+                <hr>
+                <div class="courses">
+                  <ul>
+                    <p><simple-icon icon="assessment"></simple-icon>&nbsp&nbsp&nbsp ${this.quizCount} quiz(zes)</p>
+                    ${this.quizzes.map(activity => html`
+                    <li>${activity.text}</li>
+                    `)}
+                  </ul>
+                </div>
+                <hr>
             </a11y-collapse>
           </div>
           <hr>
