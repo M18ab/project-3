@@ -97,21 +97,13 @@ class Project3 extends LitElement {
         text-decoration: underline;
       }
 
-      @media only screen and (max-width: 400px) {
+      @media only screen and (max-width: 450px) {
         .wrapper {
           text-transform: var;
           width: var;
           font-size: 4vw;
           gap: 50px;
         }
-      }
-
-      @media only screen and (min-width: 401px) and (max-width: 800px) {
-        /* CSS styles here */
-      }
-
-      @media only screen and (min-width: 801px) {
-        /* CSS styles here */
       }
 
       a11y-collapse {
