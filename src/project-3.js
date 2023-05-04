@@ -102,6 +102,7 @@ class Project3 extends LitElement {
           text-transform: var;
           width: var;
           font-size: 4vw;
+          gap: 50px;
         }
       }
 
